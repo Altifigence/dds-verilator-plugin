@@ -1,0 +1,13 @@
+{
+  "name": "@altifigence/verilator-plan-adapter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "Original bounded argument planner for an external Verilator lint process. Source preview; no tool execution.",
+  "repository": { "type": "git", "url": "https://github.com/Altifigence/dds-verilator-plugin.git" },
+  "exports": "./src/plan.mjs",
+  "files": ["src", "LICENSE", "NOTICE", "licenses", "README.md", "extension.manifest.json"],
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "engines": { "node": ">=22" }
+}
