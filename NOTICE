@@ -1,22 +1,29 @@
 Altifigence Verilator plan adapter
 Copyright 2026 Altifigence
 
-The original adapter code is licensed under Apache-2.0; see LICENSE.
-It uses no private Digital Design Studio implementation and does not copy,
-link, modify or bundle Verilator source, runtime headers, libraries or binaries.
+Original adapter code, declarations, examples and documentation are licensed
+under Apache-2.0; see LICENSE. No private Digital Design Studio implementation,
+Verilator source implementation, runtime headers, libraries or binaries are
+copied, linked, modified or bundled here.
 
 The optional external tool is Verilator, Copyright 2003-2026 Wilson Snyder and
 its contributors. Upstream declares LGPL-3.0-only OR Artistic-2.0 for Verilator
-internals. The complete unchanged upstream LICENSE at commit
-ea338be98e1e838d3518809ce8899f85a009963c is in licenses/LICENSE.Verilator.
+internals. The following license documents are copied without byte changes
+from v5.052, commit ea338be98e1e838d3518809ce8899f85a009963c:
+
+Upstream LICENSE -> licenses/LICENSE.Verilator
+Contains the LGPL version 3 and GPL version 3 texts (not the Artistic text).
+Bytes: 42098
 SHA-256: 996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1
 
-Verilator LICENSE is retained under its own terms. Apache-2.0 applies only to
-the original adapter; it does not relicense Verilator or other upstream files.
-Individual upstream examples, test cases and bundled dependencies can carry
-different licenses. No upstream code is included in this source candidate.
+Upstream LICENSES/Artistic-2.0.txt -> licenses/Artistic-2.0.Verilator.txt
+Contains the Artistic License 2.0 text.
+Bytes: 8764
+SHA-256: bae466ac8d7100c304fe76632ccc627203a3897d3f7166f3cce00fb9df8c2074
 
-This source preview contains no tool binary. A future
-binary package must identify its exact source, patches, build recipe and
-per-file/dependency notices and provide source access under the chosen license.
-The upstream source URL by itself is not a binary redistribution receipt.
+These upstream documents retain their own terms. Apache-2.0 applies only to
+original adapter files and does not relicense Verilator. Individual upstream
+files and dependencies may carry different licenses; this source preview
+contains no tool binary. A future binary delivery must identify its chosen
+license, exact corresponding source, patches, build recipe and dependency
+notices and provide the source access that license requires.
