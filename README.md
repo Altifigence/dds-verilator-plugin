@@ -1,5 +1,7 @@
 # Verilator adapter for Digital Design Studio
 
+[Official integration guide](https://docs.altifigence.com/products/digital-design-studio/plugins/) · [한국어](https://docs.altifigence.com/ko-kr/products/digital-design-studio/plugins/) · [Build a DDS plugin](https://docs.altifigence.com/developers/plugin-sdk/) · [Releases](https://github.com/Altifigence/dds-verilator-plugin/releases)
+
 An Apache-2.0, dependency-free JavaScript adapter that verifies saved
 SystemVerilog source identities and builds a Verilator `--lint-only` argument
 plan. Release **0.1.1** includes the implementation, TypeScript declarations,
