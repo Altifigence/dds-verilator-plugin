@@ -62,12 +62,23 @@ test('public source separates original adapter license from exact upstream terms
   const manifest = JSON.parse(readFileSync(new URL('../extension.manifest.json', import.meta.url), 'utf8'));
   const license = readFileSync(new URL('../licenses/LICENSE.Verilator', import.meta.url));
   assert.equal(sha(license), manifest.tool.licenseSha256); assert.equal(license.length, manifest.tool.licenseBytes);
+  assert.equal(manifest.tool.licenseFiles.length, 2);
+  for (const entry of manifest.tool.licenseFiles) {
+    const bytes = readFileSync(new URL(`../${entry.path}`, import.meta.url));
+    assert.equal(sha(bytes), entry.sha256); assert.equal(bytes.length, entry.bytes);
+    assert.equal(entry.url, `https://github.com/verilator/verilator/blob/${manifest.tool.commit}/${entry.upstreamPath}`);
+  }
+  const artistic = readFileSync(new URL('../licenses/Artistic-2.0.Verilator.txt', import.meta.url), 'utf8');
+  assert.match(license.toString(), /GNU LESSER GENERAL PUBLIC LICENSE/);
+  assert.match(license.toString(), /GNU GENERAL PUBLIC LICENSE/);
+  assert.match(artistic, /Artistic License 2.0/);
   assert.equal(manifest.adapter.license, 'Apache-2.0'); assert.equal(manifest.tool.licenseExpression, 'LGPL-3.0-only OR Artistic-2.0');
   assert.equal(manifest.tool.bundled, false); assert.equal(manifest.tool.binary, null);
   assert.deepEqual(manifest.permissions, { execute: false, network: false, filesystem: false, hardware: false });
   assert.deepEqual(manifest.publication, { repository: 'https://github.com/Altifigence/dds-verilator-plugin', marketplace: null });
   const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(packageJson.private, true); assert.equal(packageJson.dependencies, undefined);
-  assert.deepEqual(readdirSync(new URL('../src', import.meta.url)), ['plan.mjs']);
+  assert.equal(packageJson.version, manifest.version);
+  assert.deepEqual(readdirSync(new URL('../src', import.meta.url)), ['plan.d.mts', 'plan.mjs']);
   assert.doesNotMatch(readFileSync(new URL('../src/plan.mjs', import.meta.url), 'utf8'), /from ['"]@altifigence-internal\/|child_process|\bfetch\(|\breadFile\(/);
 });

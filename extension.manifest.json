@@ -3,7 +3,7 @@
   "id": "org.altifigence.verilator",
   "name": "Verilator",
   "publisher": "Altifigence",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "state": "source-preview",
   "adapter": {
     "entrypoint": "src/plan.mjs",
@@ -22,6 +22,24 @@
     "licenseSha256": "996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1",
     "licenseBytes": 42098,
     "licenseUrl": "https://github.com/verilator/verilator/blob/ea338be98e1e838d3518809ce8899f85a009963c/LICENSE",
+    "licenseFiles": [
+      {
+        "path": "licenses/LICENSE.Verilator",
+        "upstreamPath": "LICENSE",
+        "contains": ["LGPL-3.0-only", "GPL-3.0-only"],
+        "sha256": "996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1",
+        "bytes": 42098,
+        "url": "https://github.com/verilator/verilator/blob/ea338be98e1e838d3518809ce8899f85a009963c/LICENSE"
+      },
+      {
+        "path": "licenses/Artistic-2.0.Verilator.txt",
+        "upstreamPath": "LICENSES/Artistic-2.0.txt",
+        "contains": ["Artistic-2.0"],
+        "sha256": "bae466ac8d7100c304fe76632ccc627203a3897d3f7166f3cce00fb9df8c2074",
+        "bytes": 8764,
+        "url": "https://github.com/verilator/verilator/blob/ea338be98e1e838d3518809ce8899f85a009963c/LICENSES/Artistic-2.0.txt"
+      }
+    ],
     "sourceUrl": "https://github.com/verilator/verilator/archive/ea338be98e1e838d3518809ce8899f85a009963c.tar.gz",
     "bundled": false,
     "modified": false,
